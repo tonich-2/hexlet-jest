@@ -12,7 +12,9 @@ const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8'
 test('reverse', () => {
   expect(reverse('hello')).toEqual('olleh');
   expect(reverse('')).toEqual('');
+});
 
+test('reverse with long text', () => {
   const text = readFile('someLongText.txt').trim();
   const result = readFile('reversedLongText.txt').trim();
   expect(reverse(text)).toEqual(result);
